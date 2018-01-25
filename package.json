@@ -1,0 +1,21 @@
+{
+  "name": "watsonactivations-visualrecognition",
+  "version": "1.0.0",
+  "description": "For retreiving information from visual recognition API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "main": "echo \"Running VisualTextRecognition\" && node VisualTextRecognition.js"
+  },
+  "keywords": [
+    "visual",
+    "recognition"
+  ],
+  "author": "William F Brinkert, AKQA",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "https-post": "^0.1.1",
+    "watson-developer-cloud": "^3.0.5"
+  }
+}
