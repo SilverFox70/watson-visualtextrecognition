@@ -82,3 +82,6 @@ Clone this repo, run **npm install** and then follow the instructions above to a
 ```
 npm run main
 ```
+
+## Future Possibilities
+The constructor could be configured to accept both the API parameters and a reference to the the **watson-developer-cloud** so that the script is portable and decoupled from the environment of this example. 
