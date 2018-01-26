@@ -10,14 +10,31 @@ const visual_recognition = watson.visual_recognition({
   version_date: '2016-05-20'
 });
 
-var params = {
-  images_file: fs.createReadStream('imgs/IMG_1089.PNG'),
-  parameters: {}
-};
+class VisualTextRecognition {
+  constructor() {
+    this.data = {};
+  }
 
-visual_recognition.recognize_text(params, function(err, response){
-  if (err)
-    console.log(err);
-  else
-    console.log(JSON.stringify(response, null, 2))
-});
+  findTextIn(file_name){
+    // For production, this should throw an error if no file name is given
+    var params = {
+      images_file: fs.createReadStream(file_name) || fs.createReadStream('imgs/IMG_1089.PNG'),
+      parameters: {}
+    };
+
+    visual_recognition.recognize_text(params, function(err, response){
+      if (err){
+        console.log(err);
+        return err
+      } else {
+        console.log(JSON.stringify(response, null, 2))
+        return response;
+      }
+    });
+  }
+}
+
+module.exports = VisualTextRecognition;
+
+
+
