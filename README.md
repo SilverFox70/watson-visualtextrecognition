@@ -66,6 +66,17 @@ visual_recognition.recognize_text(params, function(err, response){
 });
 ```
 
+## Visual Text Recognition Class
+The **VisualTextRecoginition** script contains a class of the same name with the method _findTextIn()_, which returns a promise. The _main.js_ script shows an example usage of this quite similar to the example below:
+``` Javascript
+visualTextRecognition.findTextIn('./imgs/lots-of-words.png')
+.then((response) => {
+  console.log(`Success! \n ${JSON.stringify(response, null, 2)}`);
+}).catch((err) => {
+  console.error(`Failed! \n ${err}`);
+});
+```
+
 ## Getting Up and Running
 Clone this repo, run **npm install** and then follow the instructions above to add the necessary code. Once that is complete, you can try it out:
 ```

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "main": "echo \"Running VisualTextRecognition\" && node VisualTextRecognition.js"
+    "main": "echo \"Running VisualTextRecognition\" && node main.js"
   },
   "keywords": [
     "visual",
