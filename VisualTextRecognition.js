@@ -17,19 +17,23 @@ class VisualTextRecognition {
 
   findTextIn(file_name){
     // For production, this should throw an error if no file name is given
-    var params = {
-      images_file: fs.createReadStream(file_name) || fs.createReadStream('imgs/IMG_1089.PNG'),
-      parameters: {}
-    };
+    return new Promise((resolve, reject) => {
+      var params = {
+        images_file: fs.createReadStream(file_name) || fs.createReadStream('imgs/IMG_1089.PNG'),
+        parameters: {}
+      };
 
-    visual_recognition.recognize_text(params, function(err, response){
-      if (err){
-        console.log(err);
-        return err
-      } else {
-        console.log(JSON.stringify(response, null, 2))
-        return response;
-      }
+      console.log(`[VisualTextRecognition.findTextIn] Sending ${file_name} for analysis @ ${Date.now()}`)
+      visual_recognition.recognize_text(params, function(err, response){
+        
+        if (err){ 
+          console.log(`[VisualTextRecoginition.findTextIn] failed @ ${Date.now()}`);
+          reject(err)
+        } else {
+          console.log(`[VisualTextRecoginition.findTextIn] succeeded @ ${Date.now()}`);
+          resolve(response);
+        }
+      }); 
     });
   }
 }
