@@ -21,7 +21,7 @@ Currently, this is just a test ground for accessing the **recognize text** funct
      * @param {Function} [callback] - The callback that handles the response.
      * @returns {ReadableStream|void}
      */
-    VisualRecognitionV3.prototype.classify = function (params, callback) {
+    VisualRecognitionV3.prototype.recognize_text = function (params, callback) {
         var _params = typeof params === 'function' && !callback ? {} : extend({}, params);
         var _callback = typeof params === 'function' && !callback
             ? params
@@ -51,7 +51,7 @@ Currently, this is just a test ground for accessing the **recognize text** funct
     };
 ```
 
-This add the functionality to find text within images. The following is an example call:
+This adds the functionality to find text within images. The following is an example call:
 ``` Javascript
 var params = {
   images_file: fs.createReadStream('imgs/IMG_1089.PNG'),
