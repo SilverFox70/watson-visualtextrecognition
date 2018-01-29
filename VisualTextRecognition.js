@@ -3,6 +3,7 @@
 const watson = require('watson-developer-cloud');
 const fs = require('fs');
 
+/** Class for sending images to Visual Recognition of text API */
 class VisualTextRecognition {
   constructor(credentials) {
     this.visual_recognition = watson.visual_recognition(credentials);
